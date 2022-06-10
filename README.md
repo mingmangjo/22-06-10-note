@@ -12,7 +12,7 @@ java에 대해 알아보고, 설치하고 기본적인 실습과제를 실행했
 아무튼, 각설하고
 
 JAVA는 프로그래밍 언어로, 객체지향 언어이다.
-객체지향 언어는 Objec-Oriented-Programming (OOP)라고도 불리며 객체지향은
+객체지향 언어는 Object-Oriented-Programming (OOP)라고도 불리며 객체지향은
 프로그램 소스코드를 기계어로 변환하는 과정에서 언어를 어떤 관점으로 해석할 것인가에 대한 방식이다.  
 소스코드들을 단순한 명령어들의 집합으로만 보지 않고, 하나의 객체와 객체간의 상호작용으로 보는 것이다.
 
@@ -40,12 +40,12 @@ JAVA의 장점으로는
 2. 멀티쓰레드 지원
 3. 동적 로딩 지원
 
-내가 학위가 있는 것도 아니고 다 알 수는 없는 노릇이기에 후반부까지 공부해보고도 모르면 다시 찾아오겠다.
+당장 모든 것을 다 이해할 수는 없는 노릇이기에 후반부까지 공부해보고도 모르면 다시 찾아오겠다.
 다만 네트워크 분산처리와 멀티쓰레드 지원을 가능하게 하는 것은 java API라는 것 정도는 알면 되겠다.
 
 다른 프로그래밍 언어가 직접 OS와 소통하는 것과 달리 JAVA는 JVM과 소통하고, JVM이 OS와 소통한다는 점 또한 중요하다.
 
-JAVA 개발환경 구축 // 혼자 하려니 쉽지 않다..
+JAVA 개발환경 구축
 
 JDK란 Java Development Kit 의 줄임말로
 JDK는 다시 JRE + 개발에 필요한 실행 파일 (javac.exe, java.exe ..., 해당 파일들은 bin directory에 저장되어 있다.)
@@ -54,13 +54,10 @@ JRE(Java Runtime Environment)는 다시 JVM + JAVA API로 구성된다.
 java 프로그래밍을 시작하고 싶다면 막연히 java를 다운받아야지! 가 아니라 JDK 를 받아야 한다. (당연한 말인가)
 내가 다운받은 JDK 버전은 8.0 버전으로 jdk1.8로 불린다.
 
-설치하고 이것저것 둘러보는데 나를 위한 공부가 아니었다면 그냥 넘어갔을 것들이 궁금했다.
-bin directory path 설정?은 왜 하는걸까 절대경로 상대경로? bin directory? 곁가지로 빠지기 시작하니 내용이 끝이 없다만.. 그래도 알고 싶었다.
+bin directory path 설정?은 왜 하는걸까 절대경로 상대경로? bin directory?
 
 path 설정이란 OS가 파일의 경로 필요 없이, 파일 이름만으로 실행시키기 위한 작업으로
 방법은 시스템 환경 변수 편집 > 고급 > 환경변수 에서 편집하면 되겠다.
-
-그래도 진도를 나가고 싶기 때문에 일단은 세부적을 완전히 이해할 수는 없어서 부분 포기를 하기로 했다.
 
 파일의 절대경로와 상대경로
 절대경로는 파일의 주소를 가장 최상위 Directory에서부터 기준 삼아 경로를 안내하고
@@ -69,11 +66,11 @@ path 설정이란 OS가 파일의 경로 필요 없이, 파일 이름만으로 �
 ex> FileA(C:\User\wowns\FileA), FileB(C:\User\wowns\FileB)가 각각의 절대경로일 때,
 
 FileB의 FileA에 대한 상대 경로는 python 기준(FileA를 작성 중 FileB를 참조하고 싶을 때)
-./FileB인 것입니다. (Python에서 ./는 해당 파일이 있는 현재 디렉토리의 위치를 나타낸다.)
+./FileB인 것이다. (Python에서 ./는 해당 파일이 있는 현재 디렉토리의 위치를 나타낸다. ../는 상위 디렉토리)
 
 절대경로는 최상위 디렉토리로부터 파일을 탐색해 속도가 느리고 상대경로는 빠르다.
 하지만 파일의 경로가 자주 바뀌거나 협업을 하는 과정에서 파일을 찾는 일은 상대경로가 더 용이하기에
-두 가지 경로를 때에 따라 적절하게 사용해야 하는 것이다.
+두 가지 경로를 때에 따라 적절하게 사용해야 한다.
 
 즉 bin directory path 설정은 bin directory의 실행 파일을 파일의 이름만으로도 사용할 수 있게끔 만들어주는 것이다.
 절대경로를 모두 알 필요 없이, 단축키 같은 느낌인 것 같다.
@@ -86,34 +83,30 @@ jdk1.8\docs\api\index.html에서 java api에 대한 설명들을 읽을 수 있�
 
 06/10
 eclipse 설치를 마치고 본격적인 실습을 시작했다. (나중에는 eclipse와 vsc를 연동할 수도 있다고 한다.)
-eclipses는 프로그래밍 언어 편집기(IDE,Integrated Development Environment)로, C언어 편집기인 Visual Studio와 같은 역할을
+eclipse는 프로그래밍 언어 편집기(IDE,Integrated Development Environment)로, C언어 편집기인 Visual Studio와 같은 역할을
 해주는 프로그램으로 보인다. 다만 intelij라는 IDE도 있다고 하는데, 유료 버전이고 아직 내가 고민할 수준의 문제가 아닌 것
-같아서 우선 eclipse 설치를 끝냈다. 역시, 누군가의 도움 없이는 과정 하나하나가 힘들다는 생각이 드며, 실습을 시작했다.
+같아서 우선 eclipse 설치를 끝냈다.
 
 Hello.java 를 작성하고 컴파일 해보았다.
 먼저 eclipse를 실행하고 새 java project를 만들어 낸 다음
-src에서 Hello.java class를 생성했다.
+src에서 Hello.java src를 생성했다.
 
 모든 java 프로젝트에는 하나 이상의 main method를 포함한 class를 포함해야 한다고 한다.
 main method의 처음과 끝까지 수행하는 것이 java application의 동작 과정이기에,
 main method가 없는 class는 실행될 수가 없는 것이다. app 또한 실행될 수 없는 것이다.
 
-여기서 나의 eclipse-workspace는 나의 wowns directory에 저장되어 있었고,
-해당 디렉 안에는 "hello"라를 하나의 java project가 있었고, src 안에 Hello.java 라는 java 파일이
-bin 안에는 Hello.java라는 class 파일이 있었다.
+여기서 나의 eclipse-workspace는 user\hello(java projcet)\src\Hello.java 라는 java 확장자 파일이
+hello\bin 안에는 Hello.java라는 class 파일이 있었다.
 
 "어째서 class 파일이 bin directory에 있는 것일까?"
-"eclipse에서 src 하위에 Hello.java라는 클래스를 생성했었늗네 어째서 src 안에 있는 파일은 java 파일인 것일까?"
-
-아직 용어 구분이 확실하지 않기에 구글링 해보았고
 
 bin = binary
-compiled files from the eclipse는 bin 파일에 .class 확장자 파일로 저장된다.
+compiled files from the eclipse는 bin 파일에 .class 확장자 파일로 저장된다. //이때 compile은 jdk1.8\bin\javac.exe를 통해
 src = source
 우리가 작성한 코드는 src 파일에 저장된다 >> .java 확장자 파일
 
-즉, eclipse-workspace\hello/_(java 프로젝트)_/\src\hello.java는 source 코드 자체 확장자
-C:\jdk1.8\bin\java.exe는 컴파일된 class 파일을 interpret 하기 위한 JDK인 것이다. //아닐 수도 있다. 그러나 지금은 그렇게 생각하기로 결정했다..
+즉, eclipse-workspace\hello\src\hello.java는 source 코드 자체 확장자
+C:\jdk1.8\bin\java.exe는 컴파일된 class 파일을 interpret 하기 위한 JDK인 것이다.
 
 // Hello.java라는 src 코드에는, Hello.class가 선언되어 있고, 프로젝트 내 유일한 class인 Hello.class에는 main method 또한 선언되어 있다.
 java.exe에 의해 main method가 호출된다고 한다. 아래의 형식을 지켜야 java.exe에 의해 호출된다고 한다.
@@ -137,7 +130,7 @@ public class Hello {
 public class가 0개일 때는 src 파일 이름인 .java가 어떤 class와의 이름과도 같아도 된다. (적어도 하나는 같아야겠지)
 public class가 1개일 때는 해당 public class의 이름과 src 파일의 이름이 반드시 같아야 한다.
 
-하나의 프로젝트에 여러개의 src 파일이 있을 수도 있겠는데, 해당 파일은 src directory 안에 다른 이름의 .java로 저장하면 되겠다. (윗부분의 나의 예상이 맞은듯)
+하나의 프로젝트에 여러개의 src 파일이 있을 수도 있겠는데, 해당 파일은 src directory 안에 다른 이름의 .java로 저장하면 되겠다.
 
 하나의 소스파일에 2개 이상의 public class가 존재할 수는 없다. (public이 아니라면 상관 없음)
 
@@ -155,9 +148,9 @@ src 파일이 2개 이상인 경우 같은 프로젝트 내의 src 파일 중의
 
 public class가 선언된 경우 해당 src 파일의 이름은 해당 class 이름과 일치해야만 하고,
 public class가 선언되지 않은 경우 해당 src 파일의 이름은 내부 class 중 임의로 설정해도 무방하다.
-ㄴ 이말은 역시 main method가 선언되지 않았다는 것이기에 같은 프로젝트의 다른 src에 main이 있어야 한다!!!!! (후....)
+ㄴ 이말은 역시 main method가 선언되지 않았다는 것이기에 같은 프로젝트의 다른 src에 main이 있어야 한다.
 
-여기까지가 hello project를 진행하면서 배운 것이다.
+여기까지가 hello project를 진행하면서 공부한 것이다.
 참.. 정말 간단한 내용일 수 있지만 내것으로 만드려 하니 참 어렵다. 하지만 내가 사용할줄 알려면 이정도는 해야겠지!!
 
 많은 error들을 (git 원격 저장소에 commit 하는 것까지) 수행하며 봐왔는데 그 내용들은 06/11 내용에 정리하도록 하겠다.
